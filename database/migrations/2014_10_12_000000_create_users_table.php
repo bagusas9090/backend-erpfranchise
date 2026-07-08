@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            // --- TAMBAHKAN BARIS INI UNTUK ROLE ---
+        $table->enum('role', ['owner', 'spv_kontrak', 'spv_non_kontrak', 'karyawan'])->default('karyawan');
             $table->rememberToken();
             $table->timestamps();
         });
